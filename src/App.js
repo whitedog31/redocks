@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Screen from "./Screen";
+import UserContextProvider from "./context";
 
-function App() {
+// App에 들어있는 모든 것들을 ContextProvider 내부에 위치 필요
+export default function App() {
+  // const [user] = useState({
+  //   name: "Minsu",
+  // });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContextProvider>
+      <Screen />
+    </UserContextProvider>
   );
 }
-
-export default App;
