@@ -20,3 +20,9 @@
 # Building Hypertranslate part
 
 - 버튼 클릭 시, 번역하는 간단 기능 구현
+
+# Understanding useReducer
+
+- useReducer 를 쓰는 이유가 무엇일가
+
+* comp가 엄청난 수의 state 를 가지고 있거나, 더 나은 방향으로 state 를 관리하기 위해서이다.
