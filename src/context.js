@@ -20,6 +20,7 @@ export const UserContext = createContext();
 
 // 다른 방법
 const UserContextProvider = ({ children }) => {
+  // init
   const [user, setUser] = useState({
     name: "Minsu",
     loggedIn: false,
@@ -38,14 +39,14 @@ const UserContextProvider = ({ children }) => {
 };
 
 // user가 사용할때마다 실행되는 함수
-export const useUser = () => {
-  const { user } = useContext(UserContext);
-  return user;
-};
+// export const useUser = () => {
+//   const { user } = useContext(UserContext);
+//   return user;
+// };
 
-export const useFns = () => {
-  const { fn } = useContext(UserContext);
-  return fn;
-};
+// export const useFns = () => {
+//   const { fn } = useContext(UserContext);
+//   return fn;
+// };
 
 export default UserContextProvider;

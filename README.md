@@ -16,3 +16,7 @@
   -> 해당 부분을 줄일수 있지 않을까 ?
 - property 와 func 을 전닯 받을 수 있다 .
 - User가 실행 할ㄸ 마다, 자동으로 수행되는 함수를 만든다.
+
+# Building Hypertranslate part
+
+- 버튼 클릭 시, 번역하는 간단 기능 구현
