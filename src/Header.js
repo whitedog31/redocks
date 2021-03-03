@@ -1,12 +1,10 @@
-import React, { useContext } from "react";
-import { UserContext } from "./context";
+import React from "react";
+import { useUser } from "./context";
 
 export default function Header() {
-  // 생성한 UserContext를 useContext완 연결
-  const {
-    user: { name, loggedIn },
-  } = useContext(UserContext);
-  // console.log("name", name);
+  // useUser를 context에 만들어 이용
+  const { name, loggedIn } = useUser();
+
   return (
     <header>
       <a href="#">Home</a> Hello {name}, you re{" "}

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useContext } from "react";
 
 // context: 어플리케이션의 데이터 저장소
 
@@ -26,13 +26,26 @@ const UserContextProvider = ({ children }) => {
   });
 
   // ...user 부분이 존재하지 않는다면, 새로운 state 가 적용되므로 name 이 사라짐
+  // onclick 함수와 연동 예정
   const logUserIn = () => setUser({ ...user, loggedIn: true });
 
   return (
-    <UserContext.Provider value={{ user, logUserIn }}>
+    // fn: 함수를 따로 지칭
+    <UserContext.Provider value={{ user, fn: { logUserIn } }}>
       {children}
     </UserContext.Provider>
   );
+};
+
+// user가 사용할때마다 실행되는 함수
+export const useUser = () => {
+  const { user } = useContext(UserContext);
+  return user;
+};
+
+export const useFns = () => {
+  const { fn } = useContext(UserContext);
+  return fn;
 };
 
 export default UserContextProvider;
