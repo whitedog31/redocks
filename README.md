@@ -26,3 +26,18 @@
 - useReducer 를 쓰는 이유가 무엇일가
 
 * comp가 엄청난 수의 state 를 가지고 있거나, 더 나은 방향으로 state 를 관리하기 위해서이다.
+
+- reducer 에 정확한 정의가 무엇일까 ?
+
+- 우리가 return 할 object 는 state 를 대체하게 된다.
+  - 변경, 조작, 추가가 아닌 replace 라는것을 참조
+- useReducer 가 reducer 함수를 call 한다.
+- useReducer(reducer 함수, 초기 state )
+
+- useStatet 가 state, setState 를 제공하는 것처럼
+- useReducer는 state dispatch 를 제공
+
+- dispatch 는 state 를 replace를 할수 잇는 action 함수를 실행
+  즉, reducer 에 함수를 실행 가능하게 해주는 점
+
+- onClick={() => func} 과 onClick = {handleClick}차이
