@@ -44,3 +44,12 @@
 - onClick={() => func} 과 onClick = {handleClick}차이
 
 # Adding To Dos
+
+- e.preventDefault() : 아무것도 안한다
+- 직접적으로 todos :
+  - [] 의 push 를 하는건 오류를 발생한다. -> 직접 array 를 수정
+  - (immutable 유지 필요 )
+- 기존의 있는 배열을 수정하는 것이 아니다.
+- 새로운 것으로 대체를 한다.
+  - 이전의 상태를 가지고, 새로운 것을 추가한다. -> anti mutation = imuutable
+- state 를 변화 시키지 않는다.
