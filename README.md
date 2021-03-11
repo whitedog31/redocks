@@ -53,3 +53,11 @@
 - 새로운 것으로 대체를 한다.
   - 이전의 상태를 가지고, 새로운 것을 추가한다. -> anti mutation = imuutable
 - state 를 변화 시키지 않는다.
+
+# Deleting To Dos
+
+- vscode emoji 설치
+- span , p 태그의 차이
+- uuid 를 이용해서 배열 id 유일성 만들기
+- filter 배열 메소드를 이용해서, 조건에 맞으면 살리고, 않으면 죽인다.
+- 해당 부분은 id 가 맞지않으면, 살리는 거기 때문에, id 가 같은 부분만 죽인다.
