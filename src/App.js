@@ -3,7 +3,9 @@ import React, { useReducer } from "react";
 const INCREMENT = "increment";
 const DECREMENT = "decrement";
 
+// reducer 함수
 const reducer = (state, action) => {
+  console.log("state", state, action);
   switch (action.type) {
     case INCREMENT:
       return {

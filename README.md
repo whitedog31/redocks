@@ -28,6 +28,7 @@
 * comp가 엄청난 수의 state 를 가지고 있거나, 더 나은 방향으로 state 를 관리하기 위해서이다.
 
 - reducer 에 정확한 정의가 무엇일까 ?
+  reducer 를 통해 return 되는 state 는 comp내의 state 값을 변경한다.
 
 - 우리가 return 할 object 는 state 를 대체하게 된다.
   - 변경, 조작, 추가가 아닌 replace 라는것을 참조
@@ -41,3 +42,5 @@
   즉, reducer 에 함수를 실행 가능하게 해주는 점
 
 - onClick={() => func} 과 onClick = {handleClick}차이
+
+# Adding To Dos
