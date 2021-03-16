@@ -41,7 +41,7 @@
 - dispatch 는 state 를 replace를 할수 잇는 action 함수를 실행
   즉, reducer 에 함수를 실행 가능하게 해주는 점
 
-- onClick={() => func} 과 onClick = {handleClick}차이
+- onClick={() => func} 과 onClick = {handleClick}차이 ???
 
 # Adding To Dos
 
@@ -61,3 +61,9 @@
 - uuid 를 이용해서 배열 id 유일성 만들기
 - filter 배열 메소드를 이용해서, 조건에 맞으면 살리고, 않으면 죽인다.
 - 해당 부분은 id 가 맞지않으면, 살리는 거기 때문에, id 가 같은 부분만 죽인다.
+
+# Completing To Dos
+
+- app.js 에서 reducer.js 로 로직 분리
+- completed 라는 새로운 배열을 추가하여, 상태관리 메소드 추가
+- ...state와 find 메소드를 이용하여, todos -> completed 로 이동
