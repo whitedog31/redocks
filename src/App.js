@@ -1,83 +1,38 @@
-import React, { useReducer, useState } from "react";
-import reducer, { ADD, COMPLETE, DEL, initialState } from "./reducer";
+import React from "react";
+import { useState } from "./context";
 
+import ADD from "./Add";
+import List from "./List";
+import Todo from "./Todo";
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  // const toDos = useToDos();
+  // const completed = useCompleted();
 
-  // 해당 부분에서 setState 가 적용
-  const [newTodo, setNewTodo] = useState("");
-
-  // 전송
-  const onSubmit = (e) => {
-    // TODO:
-    // 따로 enter code 를 적용하지 않았는데 자동으로 됨. 이유는 ????
-    console.log("work");
-    e.preventDefault();
-
-    // input 에서 받은 text 를 dispatch ADD 를 적용한다.
-    dispatch({ type: ADD, payload: newTodo });
-
-    // 다시 reset
-    setNewTodo("");
-  };
-  // 변화 감지
-  const onChange = (e) => {
-    const { value } = e.target;
-    console.log("onChange", value);
-    setNewTodo(value);
-  };
-
+  const { toDos, completed } = useState();
   return (
     <>
       <h1>add to todos</h1>
 
-      <form onSubmit={onSubmit}>
-        <input
-          value={newTodo}
-          type="text"
-          placeholder="Write to do"
-          onChange={onChange}
-        />
-      </form>
+      <ADD />
 
-      {/* show */}
-      <ul>
-        <h2>todos</h2>
-        {state.toDos.map((todo) => (
-          <li key={todo.id}>
-            <span>{todo.text}</span>
-            <span onClick={() => dispatch({ type: DEL, payload: todo.id })}>
-              "DELETE"
-            </span>
-            <span
-              onClick={() => dispatch({ type: COMPLETE, payload: todo.id })}
-            >
-              "complete"
-            </span>
-          </li>
+      <List name="To do">
+        {toDos.map((todo) => (
+          <Todo key={todo.id} id={todo.id} text={todo.text} />
         ))}
-      </ul>
-      <ul>
-        {state.completed.length !== 0 && (
-          <>
-            <h2>Completed</h2>
-            {state.completed.map((todo) => (
-              <li key={todo.id}>
-                <span>{todo.text}</span>
-                <span onClick={() => dispatch({ type: DEL, payload: todo.id })}>
-                  "DELETE"
-                </span>
-                <span
-                  onClick={() => dispatch({ type: COMPLETE, payload: todo.id })}
-                >
-                  "complete"
-                </span>
-              </li>
-            ))}
-          </>
-        )}
-      </ul>
-      {/* show 완료 목록  */}
+      </List>
+
+      <List name={completed.length !== 0 ? "Completed" : ""}>
+        <>
+          {completed.map((todo) => (
+            <Todo
+              key={todo.id}
+              id={todo.id}
+              text={todo.text}
+              isCompleted={true}
+            />
+          ))}
+        </>
+      </List>
     </>
   );
 }

@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
+
+import { ADD, UNCOMPLETE, COMPLETE, DEL } from "./actions";
 // 초기 값
 export const initialState = {
   toDos: [],
@@ -6,21 +8,27 @@ export const initialState = {
 };
 
 // 액션 타입 선언
-export const ADD = "add";
-export const DEL = "del";
-export const COMPLETE = "complete";
+
 // reducer 함수
 const reducer = (state, action) => {
   // eslint-disable-next-line default-case
   switch (action.type) {
+    case UNCOMPLETE:
+      const atarget = state.completed.find(
+        (todo) => todo.id === action.payload
+      );
+      return {
+        ...state,
+        completed: state.completed.filter((todo) => todo.id !== action.payload),
+        toDos: [...state.toDos, { ...atarget }],
+      };
     case COMPLETE:
       // find 는 각 ele 에 한번씩 function 을 실행
-      const target = state.toDos.find((todo) => todo.id !== action.payload);
+      const target = state.toDos.find((todo) => todo.id === action.payload);
       return {
         ...state,
         toDos: state.toDos.filter((todo) => todo.id !== action.payload),
         completed: [...state.completed, { ...target }],
-        // toDos : state.
       };
     // 삭제하기
     //  이전에 가져온 todos 에 정보를 가져온다.

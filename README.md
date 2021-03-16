@@ -67,3 +67,14 @@
 - app.js 에서 reducer.js 로 로직 분리
 - completed 라는 새로운 배열을 추가하여, 상태관리 메소드 추가
 - ...state와 find 메소드를 이용하여, todos -> completed 로 이동
+
+# Uncompleting To Dos
+
+- reducer 에 complete 로직을 반대로 이용하여 uncomplete 로직을 구현
+- 이로써, 하나의 기능을 만들어서, 재 사용 하는 방법을 이용하면, 생산성이 증대되는 상황을 겪음.
+- 하나의 선으로 먼저 기능을 만들고, 분리하여, 재사용하는 방법을 기본 골자로 이용하는 방법을 하자
+
+# Refactoring with Context
+
+- 재구조화 : 새롭게 comp를 쪼개고, 기능을 재구축한다.
+- 여기서는 context와 redux를 결합하는 방식으로

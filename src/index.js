@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import ToDosProvider from "./context";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ToDosProvider>
     <App />
-  </React.StrictMode>,
+  </ToDosProvider>,
   document.getElementById("root")
 );
 
